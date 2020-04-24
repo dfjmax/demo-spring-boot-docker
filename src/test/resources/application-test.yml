@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo-spring-boot-docker
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
+  jpa:
+    database: h2
+    show-sql: true
+    properties:
+      hibernate.hbm2ddl.auto: none
+      hibernate.show_sql: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true

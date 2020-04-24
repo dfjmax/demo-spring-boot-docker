@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    image: demo-spring-boot-docker
+    depends_on:
+      - db
+    ports:
+    - 8080:8080
