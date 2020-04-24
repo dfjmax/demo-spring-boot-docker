@@ -11,7 +11,7 @@ services:
       - 5432:5432
   web:
     build: .
-    image: demo-spring-boot-docker
+    image: dfjmax/demo-spring-boot-docker
     depends_on:
       - db
     ports:
